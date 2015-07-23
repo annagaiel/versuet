@@ -27,7 +27,21 @@
 	</header>
 	<hr />
 	<br class="clear"/>
-<%= yield %>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="col-xs-6">
+				<%= link_to "This isn't enough, I need more", "#", :class => 'next-quote' %>
+			</div>
+			<div class="col-xs-6 footer-blurb">
+				Made with Love by Anna
+			</div>
+		</div>	
+	</div>
 
 </body>
 </html>
