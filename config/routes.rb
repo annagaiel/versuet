@@ -54,4 +54,8 @@ Versuet::Application.routes.draw do
   #     resources :products
   #   end
   root 'quotes#index'
+
+  resources :quotes
+  # The priority is basef upon order of creation: first created -> highest priority.
+
 end
