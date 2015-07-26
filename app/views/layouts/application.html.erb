@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Versuet</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Versuet</title>
+  	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  	<%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
-		<div class="col-xs-3">
-			<%= link_to root_path do %>
+		<div class="col-xs-3 col-sm-2">
+			<%= link_to root_path, :class =>"logo" do %>
 			<div class="circle">
 				<br />	
 				<br />
@@ -18,16 +19,16 @@
 			</div>
 			<% end %>
 		</div>
-		<div class="col-sm-4 hidden-xs slogan">
-			<p>Changing the lifes of people through encouragement
+		<div class="col-sm-6 hidden-xs slogan text-left">
+			<p class="text-left">Motivating the lives of others
 			</p>
 		</div>
-		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-5 links pull-right">
+		<div class="col-xs-8 col-xs-offset-1 col-sm-offset-0 col-sm-4 links">
 			<!-- link trigger modal -->
-		    <%= link_to 'Contribute', '#', :data =>{
+		    <%= link_to 'Contribute', '#', :class => "text-right", :data =>{
 		    	:toggle => 'modal', :target => '#myModal'} %>
 		    &nbsp;&nbsp;
-			<%= link_to 'About', about_path %>
+			<%= link_to 'About', about_path, :class => "text-right"%>
 		</div>
 	</header>
 
@@ -53,11 +54,8 @@
 	      	</div>
 	  	</div>
   	</div>
-
 	<hr />
-	<br class="clear"/>
-
-	<div class="container">
+	<div class="container centered">
 		<% if flash[:error].present? %>
 		<div class="col-xs-10 col-ex-offset-1 alert alert-danger">
 			<%= flash[:error].html_safe %>
