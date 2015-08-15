@@ -2,8 +2,9 @@ require 'test_helper'
 
 class QuotesControllerTest < ActionController::TestCase
   test "quote show page" do
-  	quote = Quote.create(:author => 'Anna Gaiel', :saying => 'Think possibilities')
-  	get :show, :id => quote.id
+
+    quote = FactoryGirl.create(:quote)
+    get :show, :id => quote.id
   	assert_response :success
   end
 
